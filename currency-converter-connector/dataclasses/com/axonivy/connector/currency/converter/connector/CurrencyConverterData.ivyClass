@@ -1,0 +1,10 @@
+CurrencyConverterData #class
+com.axonivy.connector.currency.converter.connector #namespace
+FromAmount Number #field
+FromAmount PERSISTENT #fieldModifier
+FromCurrency app.frankfurter.api.client.CurCodes #field
+FromCurrency PERSISTENT #fieldModifier
+ToAmount Number #field
+ToAmount PERSISTENT #fieldModifier
+ToCurrency app.frankfurter.api.client.CurCodes #field
+ToCurrency PERSISTENT #fieldModifier
