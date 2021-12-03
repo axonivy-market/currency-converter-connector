@@ -1,5 +1,5 @@
 [Ivy]
-17D7F8306CB80A4D 9.2.0 #module
+17D7F8306CB80A4D 9.3.1 #module
 >Proto >Proto Collection #zClass
 Cr0 CurrencyConverter Big #zClass
 Cr0 B #cInfo
@@ -24,7 +24,7 @@ Cr0 f0 outParamDecl '<Number ToAmount> result;' #txt
 Cr0 f0 outParamTable 'result.ToAmount=in.ToAmount;
 ' #txt
 Cr0 f0 callSignature convert(Number,app.frankfurter.api.client.CurCodes,app.frankfurter.api.client.CurCodes) #txt
-Cr0 f0 tags CONNECTOR #txt
+Cr0 f0 @CG|tags CONNECTOR #txt
 Cr0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>

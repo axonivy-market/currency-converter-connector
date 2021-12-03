@@ -53,11 +53,22 @@ body {
 .ui-layout-unit-content .ui-inputfield {
   width: 100%;
 }
+@media screen and (min-width: 40.063em)
+{
+  .container.right-aligned-labels label {
+    float: right;
+    text-align: right;
+  }
+}
+.container .top-aligned-label label {
+  margin-bottom: 1em;
+  display: inline-block;
+}
 .command-btns {
   float: right;
   margin-bottom: 20px;
 }
-.command-btn > a {
+.command-btns > a {
   margin-right: 10px;
   line-height: 30px;
   color: var(--accent-color, gray);
