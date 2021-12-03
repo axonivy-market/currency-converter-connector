@@ -1,4 +1,7 @@
 {
+  "properties": {
+    "openApiUrl": "openapi.json"
+  },
 	"installers": [
 		{
 			"id": "maven-import",
