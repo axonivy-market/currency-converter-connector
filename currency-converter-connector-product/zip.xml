@@ -10,7 +10,7 @@
         <fileSet>
             <directory>.</directory>
             <includes>
-                <include>product.json</include>
+                <include>*.json</include>
                 <include>README.md</include>
                 <include>**/*.png</include>
             </includes>
