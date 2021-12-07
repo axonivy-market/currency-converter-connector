@@ -6,7 +6,7 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:pe="http://primefaces.org/ui/extensions">
 <h:body>
-	<ui:composition template="/layouts/frame-8.xhtml">
+	<ui:composition template="/layouts/frame-9.xhtml">
 		<ui:define name="title">CurInput</ui:define>
 		<ui:define name="content">
 
@@ -19,26 +19,22 @@
 						ui-g-12 ui-md-3 ui-lg-2, 
 						ui-g-12 ui-md-9 ui-lg-4">
 
-					<p:outputLabel for="currencyConverterDataFromAmount"
-						value="Input Amount" />
-					<p:inputText id="currencyConverterDataFromAmount"
-						value="#{data.convert.FromAmount}" required="true"></p:inputText>
+					<p:outputLabel for="currencyConverterDataFromAmount" value="Input Amount" />
+					<p:inputNumber id="currencyConverterDataFromAmount" value="#{data.convert.FromAmount}" required="true" />
 
 					<p:outputLabel value="Input Currency" />
-					<ic:com.axonivy.connector.currency.converter.connector.demo.CurrencyDropdown currency="#{data.convert.FromCurrency}"/>
+					<ic:com.axonivy.connector.currency.converter.connector.demo.CurrencyDropdown currency="#{data.convert.FromCurrency}" />
 					
 					<p:outputLabel value="Output Currency" />
-					<ic:com.axonivy.connector.currency.converter.connector.demo.CurrencyDropdown currency="#{data.convert.ToCurrency}"/>
+					<ic:com.axonivy.connector.currency.converter.connector.demo.CurrencyDropdown currency="#{data.convert.ToCurrency}" />
 					
-					<p:outputLabel for="currencyConverterDataAmountInEuro"
-						value="Amount" />
-					<p:inputText id="currencyConverterDataAmountInEuro" value="#{data.convert.ToAmount}"></p:inputText>
+					<p:outputLabel for="currencyConverterDataAmountInEuro" value="Amount" />
+					<p:inputText id="currencyConverterDataAmountInEuro" value="#{data.convert.ToAmount}" disabled="true" />
 
 				</p:panelGrid>
 				<br />
 				<div class="command-btns">
-					<p:commandButton id="proceed" actionListener="#{logic.calculate}"
-						value="Calculate" update="form" icon="fa fa-calculator" />
+					<p:commandButton id="proceed" actionListener="#{logic.calculate}" value="Calculate" update="form" icon="fa fa-calculator" />
 				</div>
 			</h:form>
 
