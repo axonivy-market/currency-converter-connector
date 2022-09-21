@@ -1,0 +1,49 @@
+{
+  "format" : "9.4.20",
+  "id" : "17D7B9CE272367D5",
+  "data" : "com.axonivy.connector.currency.converter.connector.demo.Data",
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "Demo Start",
+      "config" : {
+        "callSignature" : "convertDemo",
+        "case" : {
+          "name" : "Währungsrechner"
+        },
+        "outLink" : "convertDemo.ivp",
+        "startDescription" : "Example of a Currency Converter",
+        "startCustomFields" : [
+          { "name" : "cssIcon", "value" : "si si-monetization-approve" }
+        ],
+        "task" : {
+          "name" : "Währungsrechner"
+        },
+        "startName" : "Currency Converter"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 22, "y" : 37 }
+      },
+      "connect" : { "id" : "f4", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 448, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "DialogCall",
+      "name" : "CurrencyConverterInput",
+      "config" : {
+        "dialogId" : "com.axonivy.connector.currency.converter.connector.demo.CurrencyConverterInput",
+        "startMethod" : "start()"
+      },
+      "visual" : {
+        "at" : { "x" : 256, "y" : 64 },
+        "size" : { "width" : 160, "height" : 60 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    } ]
+}
