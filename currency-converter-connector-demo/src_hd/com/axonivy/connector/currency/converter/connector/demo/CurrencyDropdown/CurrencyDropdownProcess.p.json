@@ -1,0 +1,60 @@
+{
+  "format" : "9.4.20",
+  "id" : "177F7F92D5088614",
+  "data" : "com.axonivy.connector.currency.converter.connector.demo.CurrencyDropdown.CurrencyDropdownData",
+  "kind" : "HTML_DIALOG",
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start(String)",
+      "config" : {
+        "callSignature" : "start",
+        "result" : {
+          "params" : [
+            { "name" : "currency", "type" : "String" }
+          ],
+          "map" : {
+            "result.currency" : "in.selectedCurrency"
+          }
+        },
+        "input" : {
+          "params" : [
+            { "name" : "currency", "type" : "String" }
+          ],
+          "map" : {
+            "out.selectedCurrency" : "param.currency"
+          }
+        },
+        "guid" : "177F7F92D7E12DAF"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 30, "y" : 35 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "177F7F92D9BC12D3"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 160 },
+        "labelOffset" : { "x" : 9, "y" : 35 }
+      },
+      "connect" : { "id" : "f5", "to" : "f4" }
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 160 }
+      }
+    } ]
+}

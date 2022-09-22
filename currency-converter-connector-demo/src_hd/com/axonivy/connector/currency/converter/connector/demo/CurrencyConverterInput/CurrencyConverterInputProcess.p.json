@@ -1,0 +1,86 @@
+{
+  "format" : "9.4.20",
+  "id" : "17801C4C33DC6518",
+  "data" : "com.axonivy.connector.currency.converter.connector.demo.CurrencyConverterInput.CurrencyConverterInputData",
+  "kind" : "HTML_DIALOG",
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "callSignature" : "start",
+        "guid" : "17801C4C34134211"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 11, "y" : 47 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 608, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "17801C4C34CDE414"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 280 },
+        "labelOffset" : { "x" : 9, "y" : 35 }
+      },
+      "connect" : { "id" : "f5", "to" : "f4" }
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 608, "y" : 280 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "HtmlDialogEventStart",
+      "name" : "calculate",
+      "config" : {
+        "guid" : "17801C80C219DBBE"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 192 },
+        "labelOffset" : { "x" : 21, "y" : 35 }
+      },
+      "connect" : { "id" : "f10", "to" : "f8" }
+    }, {
+      "id" : "f8",
+      "type" : "SubProcessCall",
+      "name" : "CurrencyConverter",
+      "config" : {
+        "processCall" : "CurrencyConverter:convert(Number,app.frankfurter.api.client.CurCodes,app.frankfurter.api.client.CurCodes)",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.convert.ToAmount" : "result.ToAmount"
+          }
+        },
+        "call" : {
+          "params" : [
+            { "name" : "FromAmount", "type" : "Number" },
+            { "name" : "FromCurrency", "type" : "app.frankfurter.api.client.CurCodes" },
+            { "name" : "ToCurrency", "type" : "app.frankfurter.api.client.CurCodes" }
+          ],
+          "map" : {
+            "param.FromAmount" : "in.convert.FromAmount",
+            "param.FromCurrency" : "in.convert.FromCurrency",
+            "param.ToCurrency" : "in.convert.ToCurrency"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 296, "y" : 192 },
+        "size" : { "width" : 128, "height" : 60 }
+      },
+      "connect" : { "id" : "f11", "to" : "f1", "via" : [ { "x" : 608, "y" : 192 } ] }
+    } ]
+}
