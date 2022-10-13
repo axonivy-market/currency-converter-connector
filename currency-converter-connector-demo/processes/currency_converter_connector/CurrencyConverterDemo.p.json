@@ -1,7 +1,9 @@
 {
-  "format" : "9.4.20",
+  "format" : "10.0.0",
   "id" : "17D7B9CE272367D5",
-  "data" : "com.axonivy.connector.currency.converter.connector.demo.Data",
+  "config" : {
+    "data" : "com.axonivy.connector.currency.converter.connector.demo.Data"
+  },
   "elements" : [ {
       "id" : "f0",
       "type" : "RequestStart",
