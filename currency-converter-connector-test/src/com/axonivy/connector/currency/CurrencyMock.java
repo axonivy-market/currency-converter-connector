@@ -14,10 +14,14 @@ import javax.ws.rs.core.Response;
 import app.frankfurter.api.client.CurCodes;
 import io.swagger.v3.oas.annotations.Hidden;
 
-@Path("currencyMock")
+@Path(CurrencyMock.PATH_SUFFIX)
 @PermitAll
 @Hidden
 public class CurrencyMock {
+
+  static final String PATH_SUFFIX = "currencyMock";
+  // URI where this mock can be reached: to be referenced in tests that use it!
+  public static final String URI = "{ivy.app.baseurl}/api/" + PATH_SUFFIX;
 
   @GET
   @Path("latest")
