@@ -2,7 +2,8 @@
   "properties": {
     "openApiUrl": "openapi.json"
   },
-	"installers": [
+	"$schema": "https://json-schema.axonivy.com/market/10.0.0/product.json",
+    "installers": [
 		{
 			"id": "maven-import",
 			"data": {
