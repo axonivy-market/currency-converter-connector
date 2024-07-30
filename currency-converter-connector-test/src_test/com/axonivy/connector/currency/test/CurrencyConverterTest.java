@@ -15,7 +15,7 @@ import ch.ivyteam.ivy.bpm.engine.client.element.BpmProcess;
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
 import ch.ivyteam.ivy.environment.AppFixture;
 
-@IvyProcessTest
+@IvyProcessTest(enableWebServer = true)
 public class CurrencyConverterTest {
 
   private static final BpmProcess testee = BpmProcess.path("CurrencyConverter");
