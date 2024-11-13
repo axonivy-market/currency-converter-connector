@@ -12,7 +12,7 @@
             <includes>
                 <include>*.json</include>
                 <include>openapi.*</include>
-                <include>README.md</include>
+                <include>README*.md</include>
                 <include>**/*.png</include>
             </includes>
         </fileSet>
