@@ -4,20 +4,18 @@
   "namespace" : "com.axonivy.connector.currency.converter.connector",
   "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "FromAmount",
+    "name" : "fromAmount",
     "type" : "Number",
     "modifiers" : [ "PERSISTENT" ]
   }, {
-    "name" : "FromCurrency",
-    "type" : "app.frankfurter.api.client.CurCodes",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "fromCurrency",
+    "type" : "app.frankfurter.api.client.CurCodes"
   }, {
-    "name" : "ToAmount",
+    "name" : "toAmount",
     "type" : "Number",
     "modifiers" : [ "PERSISTENT" ]
   }, {
-    "name" : "ToCurrency",
-    "type" : "app.frankfurter.api.client.CurCodes",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "toCurrency",
+    "type" : "app.frankfurter.api.client.CurCodes"
   } ]
 }

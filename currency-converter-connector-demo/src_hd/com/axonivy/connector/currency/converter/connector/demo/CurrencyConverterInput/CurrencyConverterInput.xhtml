@@ -20,16 +20,16 @@
 						ui-g-12 ui-md-9 ui-lg-4">
 
 					<p:outputLabel for="currencyConverterDataFromAmount" value="Input Amount" />
-					<p:inputNumber id="currencyConverterDataFromAmount" value="#{data.convert.FromAmount}" required="true" />
+					<p:inputNumber id="currencyConverterDataFromAmount" value="#{data.convert.fromAmount}" required="true" />
 
 					<p:outputLabel value="Input Currency" />
-					<ic:com.axonivy.connector.currency.converter.connector.demo.CurrencyDropdown currency="#{data.convert.FromCurrency}" />
+					<ic:com.axonivy.connector.currency.converter.connector.demo.CurrencyDropdown currency="#{data.convert.fromCurrency}" />
 					
 					<p:outputLabel value="Output Currency" />
-					<ic:com.axonivy.connector.currency.converter.connector.demo.CurrencyDropdown currency="#{data.convert.ToCurrency}" />
+					<ic:com.axonivy.connector.currency.converter.connector.demo.CurrencyDropdown currency="#{data.convert.toCurrency}" />
 					
 					<p:outputLabel for="currencyConverterDataAmountInEuro" value="Amount" />
-					<p:inputText id="currencyConverterDataAmountInEuro" value="#{data.convert.ToAmount}" disabled="true" />
+					<p:inputText id="currencyConverterDataAmountInEuro" value="#{data.convert.toAmount}" disabled="true" />
 
 				</p:panelGrid>
 				<br />
