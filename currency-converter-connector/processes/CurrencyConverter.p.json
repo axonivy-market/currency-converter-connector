@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "17D7F8306CB80A4D",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -10,12 +10,12 @@
       "type" : "CallSubStart",
       "name" : "convert(Number,CurCodes,CurCodes)",
       "config" : {
-        "callSignature" : "convert",
+        "signature" : "convert",
         "input" : {
           "params" : [
-            { "name" : "FromAmount", "type" : "Number" },
-            { "name" : "FromCurrency", "type" : "app.frankfurter.api.client.CurCodes" },
-            { "name" : "ToCurrency", "type" : "app.frankfurter.api.client.CurCodes" }
+            { "name" : "FromAmount", "type" : "Number", "desc" : "" },
+            { "name" : "FromCurrency", "type" : "app.frankfurter.api.client.CurCodes", "desc" : "" },
+            { "name" : "ToCurrency", "type" : "app.frankfurter.api.client.CurCodes", "desc" : "" }
           ],
           "map" : {
             "out.FromAmount" : "param.FromAmount",
@@ -25,20 +25,24 @@
         },
         "result" : {
           "params" : [
-            { "name" : "ToAmount", "type" : "Number" }
+            { "name" : "ToAmount", "type" : "Number", "desc" : "" }
           ],
           "map" : {
             "result.ToAmount" : "in.ToAmount"
           }
-        },
-        "tags" : "CONNECTOR"
+        }
       },
+      "tags" : [
+        "CONNECTOR"
+      ],
       "visual" : {
         "at" : { "x" : 96, "y" : 64 },
         "labelOffset" : { "x" : 32, "y" : 44 },
         "icon" : "res:/webContent/icons/curConverterSmall.png?small"
       },
-      "connect" : { "id" : "f4", "to" : "f3" }
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
     }, {
       "id" : "f1",
       "type" : "CallSubEnd",
@@ -50,25 +54,31 @@
       "type" : "RestClientCall",
       "name" : "Currency Converter API (CurrencyConverter)",
       "config" : {
-        "path" : "/latest",
-        "clientId" : "f6097886-ec23-421a-8264-e8782f59723e",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "queryParams" : {
-          "amount" : "in.FromAmount",
-          "from" : "in.FromCurrency",
-          "to" : "in.ToCurrency"
+        "target" : {
+          "clientId" : "f6097886-ec23-421a-8264-e8782f59723e",
+          "path" : "/latest",
+          "queryParams" : {
+            "amount" : "in.FromAmount",
+            "from" : "in.FromCurrency",
+            "to" : "in.ToCurrency"
+          }
         },
-        "statusErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.ToAmount" : "result.rates.get(in.ToCurrency.toString()) as Double"
-        },
-        "resultType" : "app.frankfurter.api.client.Rate"
+        "response" : {
+          "entity" : {
+            "type" : "app.frankfurter.api.client.Rate",
+            "map" : {
+              "out.ToAmount" : "result.rates.get(in.ToCurrency.toString()) as Double"
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 344, "y" : 64 },
-        "size" : { "width" : 288, "height" : 60 },
+        "size" : { "width" : 288 },
         "icon" : "res:/webContent/icons/curConverterSmall.png"
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     } ]
 }

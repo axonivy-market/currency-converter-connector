@@ -1,4 +1,0 @@
-CurrencyConverterInputData #class
-com.axonivy.connector.currency.converter.connector.demo.CurrencyConverterInput #namespace
-convert com.axonivy.connector.currency.converter.connector.CurrencyConverterData #field
-convert PERSISTENT #fieldModifier

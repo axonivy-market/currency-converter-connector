@@ -1,4 +1,0 @@
-CurrencyDropdownData #class
-com.axonivy.connector.currency.converter.connector.demo.CurrencyDropdown #namespace
-selectedCurrency String #field
-selectedCurrency PERSISTENT #fieldModifier
