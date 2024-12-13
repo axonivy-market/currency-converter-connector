@@ -1,0 +1,11 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "CurrencyDropdownData",
+  "namespace" : "com.axonivy.connector.currency.converter.connector.demo.CurrencyDropdown",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "selectedCurrency",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

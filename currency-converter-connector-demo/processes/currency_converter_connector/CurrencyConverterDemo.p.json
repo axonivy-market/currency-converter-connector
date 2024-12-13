@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "17D7B9CE272367D5",
   "config" : {
     "data" : "com.axonivy.connector.currency.converter.connector.demo.Data"
@@ -9,25 +9,28 @@
       "type" : "RequestStart",
       "name" : "Demo Start",
       "config" : {
-        "callSignature" : "convertDemo",
-        "case" : {
-          "name" : "Währungsrechner"
+        "signature" : "convertDemo",
+        "request" : {
+          "name" : "Currency Converter",
+          "description" : "Example of a Currency Converter",
+          "customFields" : [
+            { "name" : "cssIcon", "value" : "si si-monetization-approve" }
+          ]
         },
-        "outLink" : "convertDemo.ivp",
-        "startDescription" : "Example of a Currency Converter",
-        "startCustomFields" : [
-          { "name" : "cssIcon", "value" : "si si-monetization-approve" }
-        ],
         "task" : {
           "name" : "Währungsrechner"
         },
-        "startName" : "Currency Converter"
+        "case" : {
+          "name" : "Währungsrechner"
+        }
       },
       "visual" : {
         "at" : { "x" : 96, "y" : 64 },
         "labelOffset" : { "x" : 22, "y" : 37 }
       },
-      "connect" : { "id" : "f4", "to" : "f3" }
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
     }, {
       "id" : "f1",
       "type" : "TaskEnd",
@@ -39,13 +42,14 @@
       "type" : "DialogCall",
       "name" : "CurrencyConverterInput",
       "config" : {
-        "dialogId" : "com.axonivy.connector.currency.converter.connector.demo.CurrencyConverterInput",
-        "startMethod" : "start()"
+        "dialog" : "com.axonivy.connector.currency.converter.connector.demo.CurrencyConverterInput:start()"
       },
       "visual" : {
         "at" : { "x" : 256, "y" : 64 },
-        "size" : { "width" : 160, "height" : 60 }
+        "size" : { "width" : 160 }
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     } ]
 }
