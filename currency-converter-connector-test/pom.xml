@@ -39,7 +39,6 @@
 			<groupId>com.axonivy.ivy.test</groupId>
 			<artifactId>unit-tester</artifactId>
 			<version>${tester.version}</version>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 	<build>
