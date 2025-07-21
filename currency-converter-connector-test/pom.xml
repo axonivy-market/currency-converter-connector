@@ -80,6 +80,19 @@
         <artifactId>project-build-plugin</artifactId>
         <extensions>true</extensions>
       </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <statelessTestsetReporter
+            implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
+            <disable>false</disable>
+            <usePhrasedFileName>false</usePhrasedFileName>
+            <usePhrasedTestSuiteClassName>true</usePhrasedTestSuiteClassName>
+            <usePhrasedTestCaseClassName>true</usePhrasedTestCaseClassName>
+            <usePhrasedTestCaseMethodName>true</usePhrasedTestCaseMethodName>
+          </statelessTestsetReporter>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>
