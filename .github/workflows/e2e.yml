@@ -1,9 +1,8 @@
 name: E2E-Build
 
 on:
-  push:
   schedule:
-    - cron:  '21 21 * * *'
+    - cron:  '0 1 * * 1'
   workflow_dispatch:
 
 permissions:
