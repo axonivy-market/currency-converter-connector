@@ -17,12 +17,12 @@ public class MultiEnvironmentContextProvider implements TestTemplateInvocationCo
 
 	@Override
 	public Stream<TestTemplateInvocationContext> provideTestTemplateInvocationContexts(ExtensionContext context) {
-		String testEnv = System.getProperty(DocusignTestConstants.END_TO_END_TESTING_ENVIRONMENT_KEY);
+		String testEnv = System.getProperty(CurrencyConverterTestConstant.END_TO_END_TESTING_ENVIRONMENT_KEY);
 		return switch (testEnv) {
-		case DocusignTestConstants.END_TO_END_TESTING_ENVIRONMENT_VALUE ->
-				Stream.of(new TestEnironmentInvocationContext(DocusignTestConstants.REAL_CALL_CONTEXT_DISPLAY_NAME));
+		case CurrencyConverterTestConstant.END_TO_END_TESTING_ENVIRONMENT_VALUE ->
+				Stream.of(new TestEnvironmentInvocationContext(CurrencyConverterTestConstant.REAL_CALL_CONTEXT_DISPLAY_NAME));
 		default ->
-				Stream.of(new TestEnironmentInvocationContext(DocusignTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME));
+				Stream.of(new TestEnvironmentInvocationContext(CurrencyConverterTestConstant.MOCK_SERVER_CONTEXT_DISPLAY_NAME));
 		};
 	}
 
