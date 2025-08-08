@@ -82,6 +82,9 @@
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
+          <systemPropertyVariables>
+            <testEnvironment>${testEnvironment}</testEnvironment>
+          </systemPropertyVariables>
           <statelessTestsetReporter implementation="org.apache.maven.plugin.surefire.extensions.junit5.JUnit5Xml30StatelessReporter">
             <disable>false</disable>
             <usePhrasedFileName>false</usePhrasedFileName>
