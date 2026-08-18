@@ -1,8 +1,13 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/rest-clients-1.json
 RestClients:
   #Currency converter based on the Frankfurter.APP
-  Currency Converter API (CurrencyConverter):
-    UUID: f6097886-ec23-421a-8264-e8782f59723e
+  Currency-Converter-API-CurrencyConverter:
+    Name: Currency Converter API (CurrencyConverter)
     Url: https://api.frankfurter.app/
     Icon: res:/webContent/icons/curConverterSmall.png
     Features:
-    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+      - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    OpenAPI:
+      SpecUrl: /home/lli/Downloads/oldDesigners/AxonIvyDesigner9.2.2.2108131032_Linux_x64/workspace/asdf/lib/generated/rest/openapi.json
+      Namespace: app.frankfurter.api.client
+    LegacyUUID: f6097886-ec23-421a-8264-e8782f59723e

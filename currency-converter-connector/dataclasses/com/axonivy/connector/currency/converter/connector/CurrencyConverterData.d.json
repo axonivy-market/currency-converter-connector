@@ -1,21 +1,20 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "CurrencyConverterData",
   "namespace" : "com.axonivy.connector.currency.converter.connector",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "fromAmount",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   }, {
     "name" : "fromCurrency",
-    "type" : "app.frankfurter.api.client.CurCodes"
+    "type" : "app.frankfurter.api.client.CurCodes",
+    "modifiers" : [ ]
   }, {
     "name" : "toAmount",
-    "type" : "Number",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Number"
   }, {
     "name" : "toCurrency",
-    "type" : "app.frankfurter.api.client.CurCodes"
+    "type" : "app.frankfurter.api.client.CurCodes",
+    "modifiers" : [ ]
   } ]
 }

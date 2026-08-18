@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "17D7F8306CB80A4D",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -55,7 +55,7 @@
       "name" : "Currency Converter API (CurrencyConverter)",
       "config" : {
         "target" : {
-          "clientId" : "f6097886-ec23-421a-8264-e8782f59723e",
+          "clientId" : "Currency-Converter-API-CurrencyConverter",
           "path" : "/latest",
           "queryParams" : {
             "amount" : "in.FromAmount",
