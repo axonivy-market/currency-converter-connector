@@ -20,7 +20,7 @@ import java.util.Map;
  * Rates
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-12-02T15:57:16.798025+01:00[Europe/Zurich]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-12-02T15:57:16.798025+01:00[Europe/Zurich]")
 public class Rates extends HashMap<String, Double> {
 
   @Override

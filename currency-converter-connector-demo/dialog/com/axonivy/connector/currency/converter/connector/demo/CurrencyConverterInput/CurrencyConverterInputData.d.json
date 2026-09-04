@@ -4,6 +4,7 @@
   "namespace" : "com.axonivy.connector.currency.converter.connector.demo.CurrencyConverterInput",
   "fields" : [ {
     "name" : "convert",
-    "type" : "com.axonivy.connector.currency.converter.connector.CurrencyConverterData"
+    "type" : "com.axonivy.connector.currency.converter.connector.CurrencyConverterData",
+    "modifiers" : [ ]
   } ]
 }
