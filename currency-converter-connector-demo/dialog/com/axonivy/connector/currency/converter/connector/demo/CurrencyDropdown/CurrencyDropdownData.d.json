@@ -3,6 +3,7 @@
   "simpleName" : "CurrencyDropdownData",
   "namespace" : "com.axonivy.connector.currency.converter.connector.demo.CurrencyDropdown",
   "fields" : [ {
-    "name" : "selectedCurrency"
+    "name" : "selectedCurrency",
+    "modifiers" : [ ]
   } ]
 }
