@@ -1,0 +1,84 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/process.json",
+  "id" : "17D7F8306CB80A4D",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.connector.currency.converter.connector.CurrencyConverterData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "convert(Number,CurCodes,CurCodes)",
+      "config" : {
+        "signature" : "convert",
+        "input" : {
+          "params" : [
+            { "name" : "FromAmount", "type" : "Number", "desc" : "" },
+            { "name" : "FromCurrency", "type" : "app.frankfurter.api.client.CurCodes", "desc" : "" },
+            { "name" : "ToCurrency", "type" : "app.frankfurter.api.client.CurCodes", "desc" : "" }
+          ],
+          "map" : {
+            "out.FromAmount" : "param.FromAmount",
+            "out.FromCurrency" : "param.FromCurrency",
+            "out.ToCurrency" : "param.ToCurrency"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "ToAmount", "type" : "Number", "desc" : "" }
+          ],
+          "map" : {
+            "result.ToAmount" : "in.ToAmount"
+          }
+        }
+      },
+      "tags" : [
+        "CONNECTOR"
+      ],
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 32, "y" : 44 },
+        "icon" : "res:/webContent/icons/curConverterSmall.png"
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 576, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Currency Converter API (CurrencyConverter)",
+      "config" : {
+        "target" : {
+          "clientId" : "Currency-Converter-API-CurrencyConverter",
+          "path" : "/latest",
+          "queryParams" : {
+            "amount" : "in.FromAmount",
+            "from" : "in.FromCurrency",
+            "to" : "in.ToCurrency"
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "app.frankfurter.api.client.Rate",
+            "map" : {
+              "out.ToAmount" : "result.rates.get(in.ToCurrency.toString()) as Double"
+            }
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 344, "y" : 64 },
+        "size" : { "width" : 288 },
+        "icon" : "res:/webContent/icons/curConverterSmall.png"
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    } ]
+}

@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="jakarta.faces.core"
+	xmlns:h="jakarta.faces.html"
+	xmlns:ui="jakarta.faces.facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="primefaces"
+	xmlns:pe="primefaces.extensions">
+<h:body>
+	<ui:composition template="/layouts/frame-10.xhtml">
+		<ui:define name="title">CurInput</ui:define>
+		<ui:define name="content">
+
+			<h3>Currency Converter</h3>
+			
+			<h:form id="form"><p:messages />
+				<p:panelGrid columns="4" layout="grid" styleClass="ui-panelgrid-blank"
+					columnClasses="ui-g-12 ui-md-3 ui-lg-2, 
+						ui-g-12 ui-md-9 ui-lg-4, 
+						ui-g-12 ui-md-3 ui-lg-2, 
+						ui-g-12 ui-md-9 ui-lg-4">
+
+					<p:outputLabel for="currencyConverterDataFromAmount" value="Input Amount" />
+					<p:inputNumber id="currencyConverterDataFromAmount" value="#{data.convert.fromAmount}" required="true" />
+
+					<p:outputLabel value="Input Currency" />
+					<ic:com.axonivy.connector.currency.converter.connector.demo.CurrencyDropdown currency="#{data.convert.fromCurrency}" />
+					
+					<p:outputLabel value="Output Currency" />
+					<ic:com.axonivy.connector.currency.converter.connector.demo.CurrencyDropdown currency="#{data.convert.toCurrency}" />
+					
+					<p:outputLabel for="currencyConverterDataAmountInEuro" value="Amount" />
+					<p:inputText id="currencyConverterDataAmountInEuro" value="#{data.convert.toAmount}" disabled="true" />
+
+				</p:panelGrid>
+				<br />
+				<div class="command-btns">
+					<p:commandButton id="proceed" actionListener="#{logic.calculate}" value="Calculate" update="form" icon="fa fa-calculator" />
+				</div>
+			</h:form>
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

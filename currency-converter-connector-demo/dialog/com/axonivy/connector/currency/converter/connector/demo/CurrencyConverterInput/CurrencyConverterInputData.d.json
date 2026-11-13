@@ -1,0 +1,10 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "CurrencyConverterInputData",
+  "namespace" : "com.axonivy.connector.currency.converter.connector.demo.CurrencyConverterInput",
+  "fields" : [ {
+    "name" : "convert",
+    "type" : "com.axonivy.connector.currency.converter.connector.CurrencyConverterData",
+    "modifiers" : [ ]
+  } ]
+}

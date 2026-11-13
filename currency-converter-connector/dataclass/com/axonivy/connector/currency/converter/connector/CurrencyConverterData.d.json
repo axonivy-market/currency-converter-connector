@@ -1,0 +1,20 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "CurrencyConverterData",
+  "namespace" : "com.axonivy.connector.currency.converter.connector",
+  "fields" : [ {
+    "name" : "fromAmount",
+    "type" : "Number"
+  }, {
+    "name" : "fromCurrency",
+    "type" : "app.frankfurter.api.client.CurCodes",
+    "modifiers" : [ ]
+  }, {
+    "name" : "toAmount",
+    "type" : "Number"
+  }, {
+    "name" : "toCurrency",
+    "type" : "app.frankfurter.api.client.CurCodes",
+    "modifiers" : [ ]
+  } ]
+}
